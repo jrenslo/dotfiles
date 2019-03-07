@@ -1,0 +1,20 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#	name = Jon Renslo
+#	email = jrenslo@gmail.com
+[user]
+	name = Jon Renslo
+	email = jonrenslo@gmail.com
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	log = log --oneline --decorate --graph
+	lg = log --all --oneline --decorate --graph -5
+	lgg = log --all --oneline --decorate --graph -9
+	mg = merge --no-ff # disable fast-forward to preserve branch structure at the cost of more save points
+	last = log -1 HEAD
+	pl = pull --rebase
