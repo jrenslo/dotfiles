@@ -1,1 +1,50 @@
 
+#PS1="\[`tput sc;printf "%$[$COLUMNS]s\r" "[\d \t]";tput rc`\][\u@\h]\w>"
+#PS1="`printf "%$[$COLUMNS-17]s\r%s\n" "[\d \t]" "[\u@\h]\w>"`"
+#PS1="\u@\h \w ->\n \t \d $ "
+PS1="[\d \t \u@\h \W]$ "
+#PS1="\[`tput sc;printf "%$[$COLUMNS]s\r" "[\d \t]";tput rc`\][\u@\h]\w>"
+#PS1="`printf "%$[$COLUMNS-17]s\r%s\n" "[\d \t]" "[\u@\h]\w>"`"
+#PS1="\u@\h \w ->\n \t \d $ "
+#PS1="[\d \t \u@\h \W]$ "
+PS1="[\D{%D %R%p} \u \W]$ "
+alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+export PATH=$PATH:/usr/local/mysql/bin
+alias c=clear
+export PATH=/Users/jrenslo/miniconda3/bin:/Applications/UMLS/LexicalTools/lvg2018/bin:/Applications/UMLS/public_metamap/bin:$PATH
+
+#ls options, colors and file/directory descriptors
+export CLICOLOR=1
+export LSCOLORS=exgxcxdxCxegedabagacad
+alias ls='ls -GFh'
+
+# alias to run a shiny application locally
+function shiny(){ r -e "library(shiny); runApp(\"$1\")";};
+
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
+
+# Add bin for Python 2.7
+# can't use " for user path substitution
+PATH=${PATH}:~/Library/Python/2.7/bin
+export PATH
+
+# Modify cache location for tensorflow hub
+export TFHUB_CACHE_DIR=~/tensorflow_hub_cache/
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# openssl bins
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
