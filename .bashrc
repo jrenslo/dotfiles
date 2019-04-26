@@ -139,7 +139,7 @@
 #    # define a bash function which escapes the string before writing it; if you
 #    # have a fix for that which doesn't slow the command down, please submit
 #    # a patch or pull request.
-#    PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo -e $$\\t$USER\\t$HOSTNAME\\tscreen $WINDOW\\t`date +%D%t%T%t%Y%t%s`\\t$PWD"$(history 1)" >> ~/.bash_eternal_history'
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo -e $$\\t$USER\\t$HOSTNAME\\tscreen $WINDOW\\t`date +%D%t%T%t%Y%t%s`\\t$PWD"$(history 1)" >> ~/.bash_eternal_history'
 #
 #    # Turn on checkwinsize
 #    shopt -s checkwinsize
@@ -185,8 +185,8 @@ alias ..='cd ..'
 alias ...='cd ..;cd ..'
 alias md='mkdir'
 alias cl='clear'
-alias du='du -ch --max-depth=1'
-alias treeacl='tree -A -C -L 2'
+alias du='du -ch -d 1'
+#alias treeacl='tree -A -C -L 2'
 
 # 2.3) Text and editor commands
 #alias em='emacs -nw'     # No X11 windows

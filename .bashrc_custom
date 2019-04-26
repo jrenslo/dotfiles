@@ -48,3 +48,17 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Configure Bash Completion
+# installed using homebrew (brew install bash-completion@2)
+# for the bash v 5.0 shell (brew install bash, add /usr/local/bin/bash to /etc/shells, run chsh -s /usr/local/bin/bash)
+#export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+#[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+
+# Enable tab completion
+# tab cycles forward
+# shift-tab cycles backward
+#set completion-ignore-case on
+#set show-all-if-ambiguous on
+#bind TAB:menu-complete
+#bind "\e[Z":menu-complete-backward
