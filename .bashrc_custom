@@ -8,7 +8,9 @@ PS1="[\d \t \u@\h \W]$ "
 #PS1="\u@\h \w ->\n \t \d $ "
 #PS1="[\d \t \u@\h \W]$ "
 PS1="[\D{%D %R%p} \u \W]$ "
-PS1="\e[0;34m[\D{%D %R%p} \u \W]$\e[m "
+PS1="\[\e[0;34m[\D{%D %R%p} \u \W]$\[\e[m "
+# set colors with \e[0;34m, unset with \e[m
+# \[ tells bash not to count color codes. fixes line wrapping
 alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 export PATH=$PATH:/usr/local/mysql/bin
