@@ -8,7 +8,9 @@
 #PS1="\u@\h \w ->\n \t \d $ "
 #PS1="[\d \t \u@\h \W]$ "
 #PS1="[\D{%D %R%p} \u \W]$ "
-PS1="\[\e[0;34m\][\D{%D %R%p} \u \W]$\[\e[m\] "
+# From CLEAR Center: 
+#PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1="\[\e[0;34m\][\D{%D %R%p}\[\033[01;32m\] \u@\h\[\e[0;34m\]: \W]\[\033[00m\]\$ "
 # set colors with \e[0;34m, unset with \e[m
 # \[ tells bash not to count color codes. fixes line wrapping
 alias mysql=/usr/local/mysql/bin/mysql
