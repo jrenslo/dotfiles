@@ -22,7 +22,7 @@ export PATH=/Users/jrenslo/miniconda3/bin:/Applications/UMLS/LexicalTools/lvg201
 #ls options, colors and file/directory descriptors
 export CLICOLOR=1
 export LSCOLORS=exgxcxdxCxegedabagacad
-alias ls='ls -GFh'
+alias ls='ls -Fh'
 
 # alias to run a shiny application locally
 function shiny(){ r -e "library(shiny); runApp(\"$1\")";};

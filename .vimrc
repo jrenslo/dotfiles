@@ -5,3 +5,4 @@ set autoindent
 set smartindent
 set cindent
 let @c = 'let @/=""'
+set number
