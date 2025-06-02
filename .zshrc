@@ -20,8 +20,10 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
 # %D                   - date as YY-MM-DD
 autoload -U colors && colors
 #PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[cyan]%}%m %{$fg[blue]%}%* %{$fg[red]%}%~ %{$reset_color%}%# "
-PS1="%{%F{15}%}[%n@%m %1d] $ %{%f%}"
-RPROMPT="[%* %W]"
+#PS1="%{%F{15}%}%W %* [%n@%m %1d]%# %{%f%}"
+#RPROMPT="[%* %W]"
+PS1="%{%F{15}%}%W %* [%1d]%# %{%f%}"
+
 
 # Zsh options
 
@@ -29,6 +31,7 @@ setopt dvorak
 HISTFILE=~/.zsh-histfile  #cache the command history here
 HISTSIZE=10000
 SAVEHIST=10000
+setopt share_history
 
 # Aliases
 alias .="cd ."
@@ -46,6 +49,8 @@ alias cl=clear
 
 # Altering $PATH
 PATH=$PATH:/Applications/MotionGenesis
+PATH=$PATH:/Applications/apache-maven-3.9.9/bin
+export PATH
 
 # By Balaji S. Srinivasan (balajis@stanford.edu)
 # Bash eternal history
@@ -77,4 +82,15 @@ PATH=$PATH:/Applications/MotionGenesis
 # a patch or pull request.
 postcmd() { eval "$PROMPT_COMMAND" } # use zsh's precommand hook to emulate bash
 PROMPT_COMMAND='echo -e $$\\t$USER\\t$HOSTNAME\\t`date +%D%t%T%t%Y%t%s`\\t$PWD\\t"$(fc -ln -1)" >> ~/.bash_eternal_history'
+
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
+
+# jenv initialization
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 

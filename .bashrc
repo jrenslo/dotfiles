@@ -225,3 +225,5 @@ export GREP_COLOR='1;31' # green for matches
 
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
+
+#. "$HOME/.local/bin/env"

@@ -17,7 +17,7 @@ alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 export PATH=$PATH:/usr/local/mysql/bin
 alias c=clear
-export PATH=/Users/jrenslo/miniconda3/bin:/Applications/UMLS/LexicalTools/lvg2018/bin:/Applications/UMLS/public_metamap/bin:$PATH
+#export PATH=/Users/jrenslo/miniconda3/bin:/Applications/UMLS/LexicalTools/lvg2018/bin:/Applications/UMLS/public_metamap/bin:$PATH
 
 #ls options, colors and file/directory descriptors
 export CLICOLOR=1
@@ -25,21 +25,21 @@ export LSCOLORS=exgxcxdxCxegedabagacad
 alias ls='ls -Fh'
 
 # alias to run a shiny application locally
-function shiny(){ r -e "library(shiny); runApp(\"$1\")";};
+#function shiny(){ r -e "library(shiny); runApp(\"$1\")";};
 
 # Setting PATH for Python 3.7
 # The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+#PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
 
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+#PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
 
 # Add bin for Python 2.7
 # can't use " for user path substitution
-PATH=${PATH}:~/Library/Python/2.7/bin
+#PATH=${PATH}:~/Library/Python/2.7/bin
 export PATH
 
 # Modify cache location for tensorflow hub
@@ -50,14 +50,17 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
+
+# start pyenv
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # Configure Bash Completion
 # installed using homebrew (brew install bash-completion@2)
 # for the bash v 5.0 shell (brew install bash, add /usr/local/bin/bash to /etc/shells, run chsh -s /usr/local/bin/bash)
 #export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 #[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 
 # Enable tab completion
@@ -67,3 +70,17 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 #set show-all-if-ambiguous on
 #bind TAB:menu-complete
 #bind "\e[Z":menu-complete-backward
+alias vnc='ssh -CL 5901:localhost:5901 acis'
+
+# FSL Setup
+FSLDIR=/Users/jonrenslo/fsl
+PATH=${FSLDIR}/bin:${PATH}
+export FSLDIR PATH
+. ${FSLDIR}/etc/fslconf/fsl.sh
+
+#uv path
+export PATH="$PATH:$HOME/.local/bin"
+
+#java environment manager (jenv) initialization
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
